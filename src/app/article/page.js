@@ -39,6 +39,7 @@ const fetchDataAndLog = async () => {
 
 const Page = async () => {
   const articles = await fetchDataAndLog();
+  const targetDate = new Date("2025-04-11");
 
   return (
     <div className="container mx-auto">
@@ -62,7 +63,13 @@ const Page = async () => {
         {articles.map((article, index) => (
           <div className="p-4 md:w-1/3" key={index}>
             <div className="h-full border-2 rounded-lg overflow-hidden">
-              <a href={`/article/${article.slug}`}>
+              <a
+                href={
+                  new Date(article.date) > targetDate
+                    ? `/${article.slug}`
+                    : `/article/${article.slug}`
+                }
+              >
                 <Image
                   className="bg-cover object-center"
                   width={article.image.width}
@@ -92,7 +99,11 @@ const Page = async () => {
                   <div className="flex items-center flex-wrap">
                     <a
                       className="text-indigo-500 inline-flex items-center md:mb-2 lg:mb-0"
-                      href={`/article/${article.slug}`}
+                      href={
+                        new Date(article.date) > targetDate
+                          ? `/${article.slug}`
+                          : `/article/${article.slug}`
+                      }
                     >
                       Read More
                       <svg
