@@ -7,18 +7,21 @@ const fetchDataAndLog = async () => {
     return data.articleCards;
   } catch (error) {
     console.error("Error fetching articles:", error);
-    return []; 
+    return [];
   }
 };
 
 const Sitemap = async () => {
   const data = await fetchDataAndLog();
 
-  console.log(data);
   const baseUrl = "https://www.marvel365bet.com";
 
+  const targetDate = new Date("2025-04-11");
   const articleUrl = data?.map((URLarticle) => ({
-    url: `${baseUrl}/article/${URLarticle.slug}`,
+    url:
+      new Date(URLarticle.date) > targetDate
+        ? `${baseUrl}/${URLarticle.slug}`
+        : `${baseUrl}/article/${URLarticle.slug}`,
     lastModified: new Date(URLarticle.updatedAt).toISOString(),
     changeFrequency: "daily",
     priority: 1,
