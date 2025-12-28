@@ -1,28 +1,30 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../../styles/reset.css";
+import "../../styles/globals.min.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Chatbot from "./components/Chatbot";
-import Btn24hr from "./components/button24hr";
-
-import Script from "next/script";
+import Banner from "./components/Banner";
+import FloatBar from "./components/FloatBar";
 
 import { GoogleTagManager } from "@next/third-parties/google";
 
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
-  title: "MarvelBet: Next Js",
+  title:
+    "Marvelbet Online Cricket Exchange: 2026 IPL, RCB Odds & Registration Bonus",
   description:
-    "Attention cricket fans! Bet on cricket with the best odds at Marvel bet casino and join the ranks of winners! Play cricket every day and earn huge bonuses!",
-  keywords: "Cricket bonuses,Cricket betting,Cricket odds",
+    "Marvelbet Online Cricket Exchange is the preferred platform for the 2026 IPL. Register now! Access fast bKash payment methods, mobile Marvelbet apps, and lucrative bonuses with promotions.",
+  keywords:
+    "Marvelbet cricket exchange,2026 IPL online betting, Marvelbet registration steps,Mobile Marvelbet apps,Marvelbet payment methods",
   alternates: {
     canonical: "https://www.marvel365bet.com/",
   },
   openGraph: {
-    title: "MarvelBet: Next Js",
+    title:
+      "Marvelbet Online Cricket Exchange: 2026 IPL, RCB Odds & Registration Bonus",
     description:
-      "Attention cricket fans! Bet on cricket with the best odds at Marvel bet casino and join the ranks of winners! Play cricket every day and earn huge bonuses!",
+      "Marvelbet Online Cricket Exchange is the preferred platform for the 2026 IPL. Register now! Access fast bKash payment methods, mobile Marvelbet apps, and lucrative bonuses with promotions.",
     locale: "en_BD",
     type: "website",
     url: "/",
@@ -31,7 +33,7 @@ export const metadata = {
         url: "/home-og.jpg",
         width: 1200,
         height: 630,
-        alt: "MarvelBet: Next Js",
+        alt: "Marvelbet Online Cricket Exchange: 2026 IPL, RCB Odds & Registration Bonus",
         type: "image/jpg",
       },
     ],
@@ -44,10 +46,10 @@ export default function RootLayout({ children }) {
       <GoogleTagManager gtmId="G-9JP0GRY20C" />
       <body className={inter.className}>
         <Header />
+        <Banner />
         {children}
         <Footer />
-        <Btn24hr />
-        <Chatbot />
+        <FloatBar />
       </body>
     </html>
   );

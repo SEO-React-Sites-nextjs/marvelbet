@@ -1,134 +1,167 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import { Autoplay, Navigation, Pagination } from "swiper/modules";
-import Image from "next/image";
+import Page1 from "./components/PageView/View1/Page1";
+import Page2 from "./components/PageView/View1/Page2";
+import Page3 from "./components/PageView/View1/Page3";
+import Page4 from "./components/PageView/View1/Page4";
+import Page5 from "./components/PageView/View1/Page5";
+import InfoItem from "./components/InfoItem";
+import Question from "./components/Question/Question";
+import PageSwiper from "./components/PageSwiper";
 
-import hero1 from "./assets/img/hero1.jpg";
-import hero2 from "./assets/img/hero2.png";
-import hero3 from "./assets/img/hero3.jpg";
-import hero4 from "./assets/img/hero4.jpg";
-import hero5 from "./assets/img/hero5.png";
-import hero6 from "./assets/img/hero6.png";
-import hero7 from "./assets/img/hero7.jpg";
-import hero8 from "./assets/img/hero8.jpg";
-import Left from "./assets/img/left-fav1.jpg";
-import Left2 from "./assets/img/left-fav2.jpg";
-import Right from "./assets/img/right-fav1.jpg";
-import Card from "./components/Card";
+const navItems = [
+  { href: "#page1", label: "Login Process" },
+  { href: "#page2", label: "Payment Methods" },
+  { href: "#page3", label: "Mobile Marvelbet Apps" },
+  { href: "#page4", label: "Registration" },
+  { href: "#page5", label: "Bonuses with Promotions" },
+  { href: "#page6", label: "FAQs" },
+];
 
-import "./styles/slider.css";
+const sections = [
+  {
+    id: "page1",
+    Component: Page1,
+    sectionClass: "home-page1-wrapper",
+  },
+  {
+    id: "page2",
+    Component: Page2,
+    sectionClass: "home-page2-wrapper",
+  },
+  {
+    id: "page3",
+    Component: Page3,
+    sectionClass: "home-page3-wrapper",
+  },
+  {
+    id: "page4",
+    Component: Page4,
+    sectionClass: "home-page4-wrapper",
+  },
+  { id: "page5", Component: Page5, sectionClass: "home-page5-wrapper" },
+  {
+    id: "page6",
+    sectionClass: "home-page6-wrapper",
+    render: () => (
+      <Question
+        h2="FAQs"
+        list={faqData}
+        jsonLd={true}
+        description={
+          <>
+            <p>
+              This <a href="/faqs">Marvelbet FAQs</a> addresses the most common
+              questions regarding starting, accessing, and funding your
+              Marvelbet account.
+            </p>
+          </>
+        }
+      />
+    ),
+  },
+];
+const faqData = [
+  {
+    question:
+      "What's the fastest way to log in to Marvelbet for mobile cricket bettors?",
+    answer:
+      "The fastest Marvelbet login process is to use the dedicated app and enable automatic login or biometric login, allowing you to instantly access live cricket odds without any manual intervention.",
+  },
+  {
+    question:
+      "Which Marvelbet payment method offers the best speed and security?",
+    answer:
+      "The fastest and most secure Marvelbet payment methods are local mobile financial services in Bangladesh, such as bKash and Nagad, which offer instant mobile payment transactions.",
+  },
+  {
+    question: "How can I ensure I download the official Marvelbet mobile app?",
+    answer:
+      "To ensure you get the latest and genuine Marvelbet mobile app, please always use the official download link provided on the Marvelbet website and never use third-party app stores.",
+  },
+  {
+    question: "Does Marvelbet have strict registration requirements or fees?",
+    answer:
+      "No, Marvelbet registration is completely free, but you must be at least 18 years old to successfully create an account.",
+  },
+];
 
 const Body = () => {
-  const HeroImages = [hero1, hero2, hero3, hero4, hero5, hero6, hero7, hero8];
-  const leftFav = [Left, Left2];
-  const rightFav = [Right];
   return (
-    <div>
-      <div className="h-auto">
-        <Swiper
-          centeredSlides={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          pagination={true}
-          modules={[Pagination, Autoplay, Navigation]}
-          className="mySwiper"
-        >
-          {HeroImages.map((image, index) => (
-            <SwiperSlide key={index}>
-              <Image src={image} alt="hero"></Image>
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
-      {/* Marquee (Animation) */}
-      <div className="post w-full bg-[#62090c] h-8 flex items-center font-semibold">
-        <div className="container mx-auto">
-          <div className="flex text-white overflow-x-hidden">
-            <div className="relative flex">
-              <svg
-                fill="#f2f2f2"
-                className="z-40 mx-2"
-                width={30}
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 640 512"
-              >
-                <path d="M533.6 32.5C598.5 85.2 640 165.8 640 256s-41.5 170.7-106.4 223.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C557.5 398.2 592 331.2 592 256s-34.5-142.2-88.7-186.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM473.1 107c43.2 35.2 70.9 88.9 70.9 149s-27.7 113.8-70.9 149c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C475.3 341.3 496 301.1 496 256s-20.7-85.3-53.2-111.8c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zm-60.5 74.5C434.1 199.1 448 225.9 448 256s-13.9 56.9-35.4 74.5c-10.3 8.4-25.4 6.8-33.8-3.5s-6.8-25.4 3.5-33.8C393.1 284.4 400 271 400 256s-6.9-28.4-17.7-37.3c-10.3-8.4-11.8-23.5-3.5-33.8s23.5-11.8 33.8-3.5zM301.1 34.8C312.6 40 320 51.4 320 64V448c0 12.6-7.4 24-18.9 29.2s-25 3.1-34.4-5.3L131.8 352H64c-35.3 0-64-28.7-64-64V224c0-35.3 28.7-64 64-64h67.8L266.7 40.1c9.4-8.4 22.9-10.4 34.4-5.3z" />
-              </svg>
-              <ul className="flex animate-marquee whitespace-nowrap">
-                <li className="mx-8">
-                  Enjoy The MarvelBet Affiliate Program & Get a Flat 50% Monthly
-                  Commission Life Time
-                </li>
-                <li className="mx-8">
-                  MarvelBet is India&nbsp;s Best Cricket Betting Exchange
-                  Platform. Sign Up For Your Free ID Today. Play With Free ₹777
-                  Bonus. UPI Accepted.
-                </li>
-              </ul>
-            </div>
+    <main>
+      <section className="page-info home">
+        <div className="container">
+          <h1>The Premier Marvelbet Online Cricket Exchange for Aficionados</h1>
+          <p>
+            <a href="">Marvelbet online cricket exchange</a> is the top choice
+            for the 2026 IPL season.
+          </p>
+          <p>
+            Follow every match of Royal Challengers Bangalore and other teams in
+            real time, and enjoy secure trading, exclusive bonuses, and
+            comprehensive market depth.
+          </p>
+          <InfoItem title="Marvelbet Online Cricket Exchange Highlights at a Glance">
+            <ul>
+              <li>
+                <strong>Login Process:</strong>
+                Simple, two-step login process for fast, secure access to all
+                live betting markets.
+              </li>
+              <li>
+                <strong>Payment Methods:</strong>
+                Supports secure, instant local payment methods like bKash and
+                Nagad for easy transactions.
+              </li>
+              <li>
+                <strong>Mobile Marvelbet Apps:</strong>
+                Dedicated mobile Marvelbet apps for Android/iOS offer superior
+                speed and performance for in-play wagering.
+              </li>
+              <li>
+                <strong>Registration:</strong>
+                The straightforward registration process takes minutes,
+                requiring minimal personal information to get started.
+              </li>
+              <li>
+                <strong>Bonuses with Promotions:</strong>
+                Claim lucrative welcome bonuses with promotions, including the
+                popular weekly cashback.
+              </li>
+            </ul>
+          </InfoItem>
+          <div className="page-group-button">
+            <a className="play-button" href="http://jeetbuzz999.com/">
+              PLAY NOW
+            </a>
+            <a className="sign-up-button" href="http://jeetbuzz999.com/">
+              SIGN UP
+            </a>
           </div>
         </div>
-      </div>
-
-      <div className="container mx-auto my-3">
-        <div className="grid grid-cols-1 mx-3 md:mx-0 md:grid-cols-2 my-3 h-auto gap-4">
-          <div className="card rounded-sm bg-[#ad0e14]">
-            <Card>Favorites </Card>
-            <div className="">
-              <Swiper
-                centeredSlides={true}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                pagination={false}
-                modules={[Autoplay]}
-                className="mySwiper"
-              >
-                {leftFav.map((image, index) => (
-                  <SwiperSlide key={index}>
-                    <Image
-                      className="w-full border-2 border-[#ad0e14]"
-                      src={image}
-                      alt="left-fav"
-                    ></Image>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
+      </section>
+      <section className="page-nav">
+        <div className="container">
+          <div className="nav-left">
+            <div className="nav-title">Table of contents</div>
+            <div className="nav-wrapper">
+              {navItems.map((item) => (
+                <a className="nav-item" key={item.href} href={item.href}>
+                  {item.label}
+                </a>
+              ))}
             </div>
           </div>
-
-          <div className="card rounded-sm bg-[#ad0e14]">
-            <Card>Favorites </Card>
-            <div className="">
-              <Swiper
-                centeredSlides={true}
-                autoplay={{
-                  delay: 3000,
-                  disableOnInteraction: false,
-                }}
-                pagination={false}
-                modules={[Autoplay]}
-                className="mySwiper"
-              >
-                {rightFav.map((image, index) => (
-                  <SwiperSlide key={index}>
-                    <Image
-                      className="w-full border-2 border-[#ad0e14]"
-                      src={image}
-                      alt="left-fav"
-                    ></Image>
-                  </SwiperSlide>
-                ))}
-              </Swiper>
-            </div>
+          <div className="nav-right">
+            <img src="/page1/page-img.png" alt="Table of contents" />
           </div>
         </div>
-      </div>
-    </div>
+      </section>
+      {sections.map(({ sectionClass, id, Component, render }) => [
+        <section id={id} key={id} className={`section-block ${sectionClass}`}>
+          <div className="container">{render ? render() : <Component />}</div>
+        </section>,
+      ])}
+      <PageSwiper />
+    </main>
   );
 };
 

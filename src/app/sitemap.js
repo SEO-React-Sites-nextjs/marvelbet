@@ -1,32 +1,8 @@
-import React from "react";
-import ArticleData from "./article/constants";
-
-const fetchDataAndLog = async () => {
-  try {
-    const data = await ArticleData();
-    return data.articleCards;
-  } catch (error) {
-    console.error("Error fetching articles:", error);
-    return [];
-  }
-};
-
 const Sitemap = async () => {
-  const data = await fetchDataAndLog();
-
   const baseUrl = "https://www.marvel365bet.com";
 
-  const targetDate = new Date("2025-04-11");
-  const articleUrl = data?.map((URLarticle) => ({
-    url:
-      new Date(URLarticle.date) > targetDate
-        ? `${baseUrl}/${URLarticle.slug}`
-        : `${baseUrl}/article/${URLarticle.slug}`,
-    lastModified: new Date(URLarticle.updatedAt).toISOString(),
-    changeFrequency: "daily",
-    priority: 1,
-  }));
-
+  // 如果不再抓文章資料，就不用 map 了
+  // 可以直接返回靜態頁面的 sitemap
   return [
     {
       url: baseUrl,
@@ -40,7 +16,13 @@ const Sitemap = async () => {
       changeFrequency: "yearly",
       priority: 1,
     },
-    ...articleUrl,
+    // 可以在這裡手動加入更多靜態文章 URL
+    // {
+    //   url: `${baseUrl}/article/sample-article`,
+    //   lastModified: new Date().toISOString(),
+    //   changeFrequency: "daily",
+    //   priority: 1,
+    // },
   ];
 };
 
