@@ -262,7 +262,10 @@ export default function ContactForm() {
                     }
                   />
                   <span className="checkmark"></span>
-                  <p>I'm 18 years old, and agree to "terms and conditions".</p>
+                  <p>
+                    {"I'm"} 18 years old, and agree to{" "}
+                    {`"terms and conditions"`}.
+                  </p>
                 </label>
               </div>
               <button type="submit" className="sign-up">
