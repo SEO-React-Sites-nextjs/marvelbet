@@ -11,6 +11,7 @@ import { GoogleTagManager } from "@next/third-parties/google";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
+  metadataBase: new URL("https://www.marvel365bet.com/"),
   title:
     "Marvelbet Online Cricket Exchange: 2026 IPL, RCB Odds & Registration Bonus",
   description:
