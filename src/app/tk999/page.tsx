@@ -67,7 +67,7 @@ const schema = {
     },
     publisher: {
         "@type": "Organization",
-        name: config.articlePublisher,
+        name: config.publisher,
         url: baseUrl
     },
     mainEntityOfPage: {
