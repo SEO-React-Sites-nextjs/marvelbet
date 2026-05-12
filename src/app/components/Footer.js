@@ -12,7 +12,7 @@ export default function Footer() {
     const jsonLd = {
       "@context": "https://schema.org",
       "@type": "SoftwareApplication",
-      name: "Velki Live Exchange",
+      name: "Marvelbet Online Cricket Exchange",
       operatingSystem: "Android, iOS",
       applicationCategory: "GameApplication",
       aggregateRating: {
