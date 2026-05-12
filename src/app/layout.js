@@ -1,3 +1,5 @@
+import Script from "next/script";
+
 import { Inter } from "next/font/google";
 import "../../styles/reset.css";
 import "../../styles/globals.min.css";
@@ -7,6 +9,8 @@ import Banner from "./components/Banner";
 import FloatBar from "./components/FloatBar";
 
 import { GoogleTagManager } from "@next/third-parties/google";
+
+import { config } from "../../config"
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -41,10 +45,20 @@ export const metadata = {
   },
 };
 
+const schemaWebSite = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": config.siteName,
+  "url": config.baseUrl,
+}
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <GoogleTagManager gtmId="G-9JP0GRY20C" />
+      <Script id="schema-layout" type="application/ld+json">
+        {JSON.stringify(schemaWebSite)}
+      </Script>
       <body className={inter.className}>
         <Header />
         <Banner />

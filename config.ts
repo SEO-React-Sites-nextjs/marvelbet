@@ -1,4 +1,3 @@
-
 const config = {
     baseUrl: "https://www.marvel365bet.com",
     siteName: "MARVELBET", // 基本上放站點清單中的主關鍵字(AI欄位)(AI是column代碼不是指AI)
