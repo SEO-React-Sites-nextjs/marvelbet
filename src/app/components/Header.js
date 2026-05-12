@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import Nav from "./Nav";
+import { config } from "../../../config"
 
 export default function Header() {
   useEffect(() => {
@@ -18,7 +19,7 @@ export default function Header() {
       dateModified: "2025-12-25T18:30:00+06:00",
       mainEntity: {
         "@type": "Organization",
-        name: "Velki Live Exchange",
+        name: config.siteName,
       },
     };
 
