@@ -28,6 +28,7 @@ export default function View5() {
         <section className="page-info">
           <div className="container">
             <h1>What is the Total Prize Money for the Hamburg vs RB Leipzig Tournament?</h1>
+            <img src="/news/news_20260425.webp" alt="What is the Total Prize Money for the Hamburg vs RB Leipzig Tournament?" />
             <p>
               Football fans and bettors alike have been buzzing lately about the recent showdown
               between these two German powerhouses. What is the total prize money for the Hamburg vs
