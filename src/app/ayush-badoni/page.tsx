@@ -1,5 +1,3 @@
-// for copy and paste
-
 import { Metadata } from "next";
 
 import { config } from "@/config";
@@ -51,14 +49,19 @@ const { baseUrl, siteName, articleAuthor, publisher, locale, language } =
 // MARK: ********* CUSTOMIZE HERE *********
 const postTime = new Date("2026-05-05").toISOString();
 const pageUrl = `${baseUrl}/ayush-badoni`;
-const description = "";
+const description =
+  "Ayush Badoni showcased his exceptional finishing skills in the 2026 IPL, leading Lucknow Super Giants to a thrilling last-ball victory over Kolkata Knight Riders. His calm temperament, adaptability, and leadership have established him as one of India’s most promising cricket stars.";
 const keywords = [
-  "keyword",
-  "keyword",
-  "keyword",
-  "keyword",
-  "keyword",
-  "keyword",
+  "Ayush Badoni",
+  "Lucknow Super Giants",
+  "IPL 2026",
+  "Kolkata Knight Riders",
+  "cricket finisher",
+  "Indian cricket rising star",
+  "LSG vs KKR",
+  "T20 cricket",
+  "cricket match highlights",
+  "Ayush Badoni achievements",
 ]; // five to ten keywords
 // MARK: ********* CUSTOMIZE HERE *********
 // MARK: ********* CUSTOMIZE HERE *********
