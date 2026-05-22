@@ -16,22 +16,22 @@ interface FooterSocialIconsProps {
 const defaultSocial: SocialItem[] = [
   {
     img: "/common/footer-icon.png",
-    path: "https://www.facebook.com/JEETBUZZ88live/",
+    path: "https://www.facebook.com/six6scricketlive",
     alt: "facebook",
   },
   {
     img: "/common/footer-icon2.png",
-    path: "https://twitter.com/jeetbuzz8888",
+    path: "https://x.com/Six6s_casino",
     alt: "twitter",
   },
   {
     img: "/common/footer-icon3.png",
-    path: "https://www.youtube.com/@BAJI-GAME8888",
+    path: "https://www.instagram.com/six6s_live",
     alt: "instagram",
   },
   {
     img: "/common/footer-icon4.png",
-    path: "https://www.instagram.com/jeetbuzzbet168/",
+    path: "https://www.youtube.com/@bajibj999",
     alt: "youtube",
   },
 ];
