@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 import { config } from "@/config";
 
-import Post, { PostProps } from "@/src/app/components/Post";
+import Post, { PostProps } from "@/src/app/components/post";
 
 import coverImg from "@/public/staticPostImage/melbet.webp";
 
