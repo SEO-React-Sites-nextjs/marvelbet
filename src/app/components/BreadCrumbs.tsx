@@ -4,6 +4,8 @@ import React, { useEffect } from "react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
+import { config } from "@/config";
+
 type Props = {
   className?: string;
   type?: "static" | "dynamic" | "";
@@ -19,11 +21,11 @@ export default function BreadCrumbs({ className = "", type }: Props) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://www.velki88live.com/",
+        item: config.baseUrl,
       },
       ...pathNames.map((segment, index) => {
         const name = decodeURIComponent(segment.replace(/-/g, " "));
-        const item = `https://www.velki88live.com/${pathNames
+        const item = `${config.baseUrl}/${pathNames
           .slice(0, index + 1)
           .join("/")}`;
         return {
@@ -58,16 +60,11 @@ export default function BreadCrumbs({ className = "", type }: Props) {
       aria-label="Breadcrumb"
     >
       <div className="container">
-        <ol itemScope itemType="https://schema.org/BreadcrumbList">
-          <li
-            itemProp="itemListElement"
-            itemScope
-            itemType="https://schema.org/ListItem"
-          >
-            <Link itemProp="item" href="/">
-              <span itemProp="name">Home</span>
+        <ol>
+          <li>
+            <Link href="/">
+              <span>Home</span>
             </Link>
-            <meta itemProp="position" content="1" />
           </li>
 
           {pathNames.map((segment, idx) => {
@@ -78,15 +75,10 @@ export default function BreadCrumbs({ className = "", type }: Props) {
             return (
               <React.Fragment key={idx}>
                 <span className="breadcrumb-separator">›</span>
-                <li
-                  itemProp="itemListElement"
-                  itemScope
-                  itemType="https://schema.org/ListItem"
-                >
-                  <Link itemProp="item" href={href}>
-                    <span itemProp="name">{label}</span>
+                <li>
+                  <Link href={href}>
+                    <span>{label}</span>
                   </Link>
-                  <meta itemProp="position" content={position.toString()} />
                 </li>
               </React.Fragment>
             );

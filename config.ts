@@ -5,7 +5,6 @@ const config = {
     publisher: 'MARVELBET', // 基本上放siteName
     locale: "en_BD", // 例如 en_US、en_GB"，不知道的話看看layout裡的metadata有沒有
     language: "en" // 如果不是英文，記得要改
-
 }
 
 export { config }
