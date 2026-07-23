@@ -11,7 +11,7 @@ import coverImg from '@/public/staticPostImage/Why-LeonBets-is-the-Best-Choice-f
 // /foo or foo are both fine
 // invalid url will be transformed to undefined
 const pageUrl = `Why-LeonBets-is-the-Best-Choice-for-Online-Sports-Betting`;
-const postTime = new Date('2025-07-02').toISOString();
+const postTime = new Date('2025-07-17').toISOString();
 
 // MARK: ********* CUSTOMIZE HERE *********
 // MARK: ********* CUSTOMIZE HERE *********
