@@ -10,7 +10,7 @@ import coverImg from '@/public/staticPostImage/Coinplay-The-All-in-One-Multi-Cur
 // MARK: ********* CUSTOMIZE HERE *********
 // /foo or foo are both fine
 // invalid url will be transformed to undefined
-const pageUrl = `Coinplay-The-All-in-One-Multi-Currency-Betting-Platform`;
+const pageUrl = `coinplay-cricket-exchange`;
 const postTime = new Date('2026-08-20').toISOString();
 
 // MARK: ********* CUSTOMIZE HERE *********
@@ -22,13 +22,13 @@ export default function Page() {
 
 const article: Omit<PostProps, 'schema'> = {
   title: {
-    title: `Coinplay: The All-in-One Multi-Currency Betting Platform`,
+    title: `Coinplay Cricket Exchange: The All-in-One Multi-Currency Betting Platform`,
     descArr: [
       `Coinplay launched back in November 2022, bringing a whole new vibe to the digital betting world. As a matter of fact, Coinplay makes it incredibly simple to dive into top-tier crypto casino entertainment. We wanted to build a space where everything you need is packed into one neat package. If you are tired of bouncing between different websites to place sports wagers and spin reels, you are completely covered right here.`,
     ],
     coverImg: {
       src: coverImg,
-      alt: `Coinplay: The All-in-One Multi-Currency Betting Platform`,
+      alt: `Coinplay Cricket Exchange: The All-in-One Multi-Currency Betting Platform`,
     },
   },
   paragraph: [
