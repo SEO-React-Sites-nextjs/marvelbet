@@ -10,7 +10,7 @@ import coverImg from '@/public/staticPostImage/LOOTBET-Cricket-Exchange-Who-Will
 // MARK: ********* CUSTOMIZE HERE *********
 // /foo or foo are both fine
 // invalid url will be transformed to undefined
-const pageUrl = `LOOTBET-Cricket-Exchange-Who-Will-Win-Dota-2-The-International-2026-Best-Prediction-Right-Now`;
+const pageUrl = `loot-bet-cricket-exchange`;
 const postTime = new Date('2026-08-25').toISOString();
 
 // MARK: ********* CUSTOMIZE HERE *********

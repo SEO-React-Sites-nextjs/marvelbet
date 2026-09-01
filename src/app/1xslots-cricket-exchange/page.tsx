@@ -10,7 +10,7 @@ import coverImg from '@/public/staticPostImage/1xslots-Who-Will-Win-CPL-2026-The
 // MARK: ********* CUSTOMIZE HERE *********
 // /foo or foo are both fine
 // invalid url will be transformed to undefined
-const pageUrl = `1xslots-Who-Will-Win-CPL-2026-The-Bold-Prediction-Nobody-Else-Is-Making-Now`;
+const pageUrl = `1xslots-cricket-exchange`;
 const postTime = new Date('2026-08-11').toISOString();
 
 // MARK: ********* CUSTOMIZE HERE *********
@@ -22,13 +22,13 @@ export default function Page() {
 
 const article: Omit<PostProps, 'schema'> = {
   title: {
-    title: `1xslots: Who Will Win CPL 2026 – The Bold Prediction Nobody Else Is Making Now`,
+    title: `1xslots Cricket Exchange: Who Will Win CPL 2026 – The Bold Prediction Nobody Else Is Making Now`,
     descArr: [
       `1xslots is live across every CPL 2026 match, and on 1xslots, the consensus winner prediction is already forming around Trinbago Knight Riders, the defending champions with Kieron Pollard, Nicholas Pooran, Sunil Narine, and Akeal Hosein locked in for another assault. They are the safe bet. They are the obvious call. And that is precisely why the team that will actually lift the trophy on September 20, 2026 at Kensington Oval, Bridgetown, is not TKR; it is the Jamaica Kingsmen, the tournament's returning franchise, and nobody is talking about them loudly enough.`,
     ],
     coverImg: {
       src: coverImg,
-      alt: `1xslots: Who Will Win CPL 2026 – The Bold Prediction Nobody Else Is Making Now`,
+      alt: `1xslots Cricket Exchange: Who Will Win CPL 2026 – The Bold Prediction Nobody Else Is Making Now`,
     },
   },
   paragraph: [
