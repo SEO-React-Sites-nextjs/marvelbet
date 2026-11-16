@@ -24,16 +24,8 @@ $page-nav-color-hover: #f6f6f6;
 $qa-border: #e8ebef;
 $qa-hover-color: #ffbe1c;
 $swiper-bg: #ff3e3e;
-$swiper-mask-left-bg: linear-gradient(
-  90deg,
-  #ff3e3e 0%,
-  rgba(255, 62, 62, 0) 100%
-);
-$swiper-mask-right-bg: linear-gradient(
-  90deg,
-  rgba(255, 62, 62, 0) 0%,
-  #ff3e3e 100%
-);
+$swiper-mask-left-bg: linear-gradient(90deg, #ff3e3e 0%, rgba(255, 62, 62, 0) 100%);
+$swiper-mask-right-bg: linear-gradient(90deg, rgba(255, 62, 62, 0) 0%, #ff3e3e 100%);
 $footer-link-color: #e8ebef;
 $footer-link-hover-color: #ff3e3e;
 $m-menu-color: $white;
@@ -102,7 +94,7 @@ $gradient: linear-gradient(90deg, #e5cc78 1.99%, #fdf7dc 50.99%, #e5cc78 100%);
 }
 html {
   body {
-    font-family: "Roboto", "Arial", sans-serif;
+    font-family: 'Roboto', 'Arial', sans-serif;
     width: 100%;
     height: 100%;
     font-size: 18px;
@@ -379,6 +371,11 @@ html {
       @include mobile() {
         gap: 10px;
       }
+      img {
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
     }
   }
   .page-notice-info {
@@ -545,7 +542,7 @@ html {
         gap: 10px;
       }
       &::before {
-        content: "";
+        content: '';
         width: 5px;
         height: 5px;
         border-radius: 50%;
@@ -652,8 +649,7 @@ html {
     background: url(./../public/page1/page-bg.png) no-repeat top center/cover;
     padding: 50px 0;
     @include mobile() {
-      background: url(./../public/page1/page-bg-m.png) no-repeat top
-        center/cover;
+      background: url(./../public/page1/page-bg-m.png) no-repeat top center/cover;
       padding: 20px 0;
     }
     .container {
@@ -667,8 +663,7 @@ html {
     background: url(./../public/page1/page-bg2.png) no-repeat top center/cover;
     padding: 50px 0;
     @include mobile() {
-      background: url(./../public/page1/page-bg2-m.png) no-repeat top
-        center/cover;
+      background: url(./../public/page1/page-bg2-m.png) no-repeat top center/cover;
       padding: 20px 0;
     }
     .container {
@@ -686,8 +681,7 @@ html {
     background: url(./../public/common/page-bg.png) no-repeat top center/cover;
     padding: 50px 0;
     @include mobile() {
-      background: url(./../public/common/page-bg-m.png) no-repeat top
-        center/cover;
+      background: url(./../public/common/page-bg-m.png) no-repeat top center/cover;
       padding: 20px 0;
     }
     .container {
@@ -711,8 +705,7 @@ html {
     &.bg {
       background: url(./../public/common/page-bg.png) no-repeat top center/cover;
       @include mobile() {
-        background: url(./../public/common/page-bg-m.png) no-repeat top
-          center/cover;
+        background: url(./../public/common/page-bg-m.png) no-repeat top center/cover;
       }
     }
   }
@@ -733,7 +726,7 @@ html {
         }
         @for $i from 1 through 6 {
           &:nth-child(#{$i}) h3::before {
-            background-image: url("./../public/page1/page-icon#{$i}.png");
+            background-image: url('./../public/page1/page-icon#{$i}.png');
           }
         }
       }
@@ -746,7 +739,7 @@ html {
           align-items: center;
         }
         &::before {
-          content: "";
+          content: '';
           position: absolute;
           left: -70px;
           top: 0;
@@ -852,11 +845,9 @@ html {
           color: $qa-hover-color;
         }
         .arrow {
-          background: url(./../public/common/qa-icon-hover.png) no-repeat
-            center/contain;
+          background: url(./../public/common/qa-icon-hover.png) no-repeat center/contain;
           &.rotated {
-            background: url(./../public/common/qa-icon2-hover.png) no-repeat
-              center/contain;
+            background: url(./../public/common/qa-icon2-hover.png) no-repeat center/contain;
           }
         }
       }
@@ -877,8 +868,7 @@ html {
       background: url(./../public/common/qa-icon.png) no-repeat center/contain;
       position: relative;
       &.rotated {
-        background: url(./../public/common/qa-icon2.png) no-repeat
-          center/contain;
+        background: url(./../public/common/qa-icon2.png) no-repeat center/contain;
       }
     }
     .item-bottom {
@@ -898,7 +888,7 @@ html {
       position: relative;
       &::before,
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         left: 0;
         top: 0;
@@ -949,11 +939,10 @@ html {
         left: 17px;
       }
       &:after {
-        content: "";
+        content: '';
         width: 17px;
         height: 30px;
-        background: url("./../public/common/slide-arrow.png") no-repeat
-          center/contain;
+        background: url('./../public/common/slide-arrow.png') no-repeat center/contain;
       }
     }
     .swiper-button-next {
@@ -962,11 +951,10 @@ html {
         right: 17px;
       }
       &:after {
-        content: "";
+        content: '';
         width: 17px;
         height: 30px;
-        background: url("./../public/common/slide-arrow.png") no-repeat
-          center/contain;
+        background: url('./../public/common/slide-arrow.png') no-repeat center/contain;
         transform: rotate(180deg);
       }
     }
@@ -1049,7 +1037,7 @@ html {
             align-items: center;
             gap: 5px;
           }
-          input[type="checkbox"] {
+          input[type='checkbox'] {
             display: none;
           }
           .checkmark {
@@ -1061,7 +1049,7 @@ html {
             border-radius: 2px;
             transition: all 0.2s ease;
             &::after {
-              content: "";
+              content: '';
               position: absolute;
               display: none;
               left: 5px;
@@ -1073,7 +1061,7 @@ html {
               transform: rotate(45deg);
             }
           }
-          input[type="checkbox"]:checked + .checkmark {
+          input[type='checkbox']:checked + .checkmark {
             border-color: #878e92;
             &::after {
               display: block;
@@ -1243,7 +1231,7 @@ html {
           width: 100%;
         }
         &:after {
-          content: "";
+          content: '';
           position: absolute;
           right: 0;
           top: 0;
@@ -1286,14 +1274,13 @@ html {
           align-items: center;
           gap: 10px;
           &::before {
-            content: "";
+            content: '';
             width: 20px;
             height: 19px;
-            background: url(./../public/common/footer-star.png) no-repeat
-              center/contain;
+            background: url(./../public/common/footer-star.png) no-repeat center/contain;
           }
           &:after {
-            content: "";
+            content: '';
             width: 1px;
             height: 18px;
             background: #717171;
@@ -1343,7 +1330,7 @@ html {
           font-size: 14px;
         }
         &::before {
-          content: "";
+          content: '';
           width: 3px;
           height: 20px;
           background: #ff3e3e;
@@ -1374,11 +1361,7 @@ html {
         width: 256px;
         border-radius: 10px;
         border: 1px solid #cb2d1e;
-        background: radial-gradient(
-          49.16% 100% at 50.2% 0%,
-          #4c4c4c 0%,
-          #000 100%
-        );
+        background: radial-gradient(49.16% 100% at 50.2% 0%, #4c4c4c 0%, #000 100%);
         height: 59px;
         padding: 0px 16px;
         color: #f3f4f5;
